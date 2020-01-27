@@ -40,9 +40,11 @@ class HistoryAdapter(private val statuses: List<StatusHistory>)
                 //TODO deze statement oplossen.
             itemView.tvLastCheckedOutDate.text = context.getString(R.string.last_checked_out_date,
                 history.lastCheckedOutDate)
-            else
+            else {
                 itemView.tvLastCheckedOutDate.text = context.getString(R.string.last_checked_out_date,
                     "")
+            }
+            itemView.tvReason.text = context.getString(R.string.reason, history.reason)
         }
     }
 }

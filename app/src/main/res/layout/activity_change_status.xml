@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clChangeStatus"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
@@ -12,21 +13,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/current_state"
-        android:textColor="@color/colorAccent"
+        android:textColor="@android:color/black"
         android:textSize="30sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/tvCurrentStatus"
+        app:layout_constraintBottom_toTopOf="@+id/llCurrentStatus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvCurrentStatus"
+    <LinearLayout
+        android:id="@+id/llCurrentStatus"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/tilReason"
@@ -38,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="32dp"
+            android:gravity="center_vertical|left|start"
             android:hint="@string/checked_in_out_ph"
             android:textColor="@color/colorAccent"
             android:textSize="30sp"
@@ -47,40 +49,52 @@
             android:id="@+id/ivStatusPlaceHolder"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:contentDescription="@string/checkbox_placeholder"
-            app:srcCompat="@mipmap/ic_launcher" />
-    </TextView>
+            android:contentDescription="@string/checkbox_placeholder" />
+    </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilReason"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/edit_text_background"
+        android:hint=" "
+        android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/btnChangeState"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCurrentStatus">
+        app:layout_constraintTop_toBottomOf="@+id/llCurrentStatus">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etReason"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:background="@null"
             android:gravity="center"
             android:hint="@string/reason_field_optional"
-            android:inputType="text" />
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:minLines="5"
+            android:scrollHorizontally="false"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnChangeState"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="100dp"
         android:background="@color/colorAccent"
-        android:text="@string/check_me_in_out"
+        android:text="@string/check_me_out"
         android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        layout="@layout/navigation_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

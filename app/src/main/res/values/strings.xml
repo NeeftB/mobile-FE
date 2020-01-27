@@ -1,11 +1,18 @@
 <resources>
-    <!--    used in: layout\activity_change_status.xml-->
     <string name="app_name">CheckerApp</string>
-    <string name="current_state">Current State</string>
+
+    <!--    used in: layout\activity_actual_status.xml-->
+    <string name="actual_state_title">Actual State</string>
+
+    <!--    used in: layout\activity_change_status.xml-->
+    <string name="current_state">Manually Change State</string>
     <string name="checked_in_out_ph">Checked in/out PH</string>
     <string name="checkbox_placeholder">Checkbox Placeholder</string>
-    <string name="reason_field_optional">Reason field (optional)</string>
-    <string name="check_me_in_out">Check me in/out</string>
+    <string name="reason_field_optional">type reason here (optional)</string>
+    <string name="reason_field_to_check_in">you need to check in on the location. you can\'t check in via the app.</string>
+    <string name="check_me_in">Check me in</string>
+    <string name="check_me_out">Check me out</string>
+    <string name="checked_status">You are checked: %1$s</string>
 
     <!--    used in: layout\activity_register.xml-->
     <string name="placeholder_image">Placeholder Image</string>
@@ -25,5 +32,18 @@
     <string name="current_status_button">Status</string>
     <string name="change_status_button">Change</string>
     <string name="status_history_button">History</string>
+    <string name="reason">Reason: %1$s</string>
+
+    <!--    used in: layout\activity_login.xml-->
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_passId">passId</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_register">No Account? Click here!</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 
 </resources>

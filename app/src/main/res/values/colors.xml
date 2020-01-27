@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="checked_in">#E3FDE4</color>
+    <color name="checked_out">#ffe0e0</color>
+    <color name="grayed_out">#bbbbbb</color>
+    <color name="grayed_out_button">#e6e6e6</color>
+    <color name="grayed_out_button_text">#999999</color>
 </resources>

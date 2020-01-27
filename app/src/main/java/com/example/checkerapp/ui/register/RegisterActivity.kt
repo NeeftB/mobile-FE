@@ -1,5 +1,6 @@
 package com.example.checkerapp.ui.register
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -7,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.checkerapp.R
 import com.example.checkerapp.model.Employee
+import com.example.checkerapp.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -22,6 +24,10 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun initViews() {
         btnConfirm.setOnClickListener{register()}
+        btnConfirm.setOnClickListener {startActivity(
+            Intent(this@RegisterActivity,
+                LoginActivity::class.java)
+        )}
     }
 
     private fun register() {
@@ -40,7 +46,12 @@ class RegisterActivity : AppCompatActivity() {
 
                 if (registerViewModel.authResponse) {
                     Toast.makeText(this, "it worked", Toast.LENGTH_SHORT).show()
-                    //TODO link direct door naar login pagina
+                    //TODO deze toast omzetten naar de response van de server.
+
+                    btnConfirm.setOnClickListener {startActivity(
+                        Intent(this@RegisterActivity,
+                            LoginActivity::class.java)
+                    )}
                 }
                 else {
                     registerViewModel.error.observe(this, Observer {

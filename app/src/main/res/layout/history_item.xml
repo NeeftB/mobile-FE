@@ -39,4 +39,14 @@
         app:layout_constraintTop_toBottomOf="@+id/tvLastCheckedInDate"
         tools:text="@string/last_checked_out_date" />
 
+    <TextView
+        android:id="@+id/tvReason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/reason"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLastCheckedOutDate" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,11 @@
 package com.example.checkerapp.ui.history
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.checkerapp.R
 import com.example.checkerapp.adapter.HistoryAdapter
 import com.example.checkerapp.model.StatusHistory
+import com.example.checkerapp.ui.change.ChangeActivity
+import com.example.checkerapp.ui.current.CurrentActivity
 import kotlinx.android.synthetic.main.activity_history.*
 import kotlinx.android.synthetic.main.navigation_bar.*
 
@@ -57,17 +62,26 @@ class HistoryActivity : AppCompatActivity() {
         btnChangeStatus.setOnClickListener { openChangeStatus() }
         btnCurrentStatus.setOnClickListener { openCurrentStatus() }
         btnHistory.setOnClickListener { openHistory() }
+        ViewCompat.setBackgroundTintList(btnHistory, ContextCompat.getColorStateList(this, R.color.grayed_out_button))
+        btnHistory.setTextColor(ContextCompat.getColorStateList(this, R.color.grayed_out_button_text))
     }
 
     private fun openHistory() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        btnHistory.setOnClickListener {startActivity(
+            Intent(this@HistoryActivity,
+                HistoryActivity::class.java)
+        )}
     }
 
     private fun openCurrentStatus() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+        btnCurrentStatus.setOnClickListener {startActivity(
+            Intent(this@HistoryActivity,
+                CurrentActivity::class.java)
+        )}}
 
     private fun openChangeStatus() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+        btnChangeStatus.setOnClickListener {startActivity(
+            Intent(this@HistoryActivity,
+                ChangeActivity::class.java)
+        )} }
 }
